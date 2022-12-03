@@ -4,26 +4,28 @@ Polly is a small moking server. It acts as a proxy / caching. It is able to capt
 
 ## Installation
 
-### Docker
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
 
 ## Usage
 
-```python
-import foobar
+```bash
+usage: main.py [-h] [-l LOCAL_IP] [-p LOCAL_PORT] [-t TTL] -d DESTINATION [-o PORT] [-f] [-v]
 
-# returns 'words'
-foobar.pluralize('word')
+options:
+  -h, --help            show this help message and exit
+  -l LOCAL_IP, --local_ip LOCAL_IP
+  -p LOCAL_PORT, --local_port LOCAL_PORT
+  -t TTL, --ttl TTL
+  -d DESTINATION, --destination DESTINATION
+  -o PORT, --port PORT
+  -f, --flush
+  -v, --verbose
+```
 
-# returns 'geese'
-foobar.pluralize('goose')
+### Example
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+
+```bash
+python3 polly/main.py -d 'https://www.something.com' -o 80 -t 10
 ```
 
 ## Contributing
