@@ -2,6 +2,7 @@ import sqlite3
 import threading
 import datetime as dt
 import base64
+import logging
 
 
 class Storage(object):
@@ -21,6 +22,7 @@ class Storage(object):
 
 
     def _conn(self):
+        logging.debug("Fetch DB connection")
         conn = sqlite3.connect("cache.db", detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
         cursor = conn.cursor()
         cursor.execute("CREATE TABLE IF NOT EXISTS messages (key PRIMARY KEY, \

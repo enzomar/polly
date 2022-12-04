@@ -1,5 +1,5 @@
-import storage
-import key
+from . import  storage
+from . import  key
 
 def put(request: str, response: str, status, ttl):
     k = key.build(request)

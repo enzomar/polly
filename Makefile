@@ -41,7 +41,7 @@ unittest: setup setupdev ## run unitest
 	. venv/bin/activate; cd polly; python -m pytest -rA ..
 	
 demo: setup ## run demo from source
-	python3 polly/main.py -d 'https://www.google.it' -o 80 -t 10 
+	python3 main.py
 
 
 build: setup Dockerfile ## build docker image

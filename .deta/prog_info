@@ -1,0 +1,1 @@
+{"id":"065e6382-679b-46f5-9b85-d8ff73ed8f06","space":39173,"runtime":"python3.9","name":"polly","path":"wje1hm","project":"a05uygka","account":"144798365827","region":"eu-central-1","deps":["httplib2"],"envs":null,"public":true,"log_level":"debug","cron":""}

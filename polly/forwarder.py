@@ -5,10 +5,12 @@ import httplib2
 
 def call(config, method, headers, query, body=None):
     h = httplib2.Http()
-    del headers['Host']
+    if "Host" in headers:
+        del headers['Host']
     new_query = config['destination']+query
-    (resp, content) = h.request(new_query,
+    resp, content = h.request(new_query,
                             method, body=body,
                             headers=headers )
-    print(content)
-    return content.decode("latin-1") , int(resp.status)
+ 
+    str_content = content.decode('latin-1')
+    return str_content , int(resp.status)
